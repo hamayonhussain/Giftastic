@@ -1,11 +1,12 @@
-function Searchgiffs() {
+$(document).ready(function() {
+ function Searchgiffs() {
     var Searchbar = document.getElementById("Searchbar").value;
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + Searchbar + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
 
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function (responce) { 
+    }).then(function (responce) {
         var results = responce.data;
 
         for (var i = 0; i < results.length; i++) {
@@ -19,7 +20,7 @@ function Searchgiffs() {
             var still = results[i].images.fixed_height_still.url;
 
             var animalImage = $("<img>");
-            animalImage.attr("src", animated);
+            animalImage.attr("src", still);
             animalImage.attr("data-still", still);
             animalImage.attr("data-animate", animated);
             animalImage.attr("data-state", "still");
@@ -31,6 +32,10 @@ function Searchgiffs() {
             $("#animals").append(animalDiv);
         }
     });
+ $('.btn').click(function() {
+    Searchgiffs();
+    });
 
-    console.log(document.getElementById("Searchbar").value);
-}
+  }
+
+});
