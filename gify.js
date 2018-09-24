@@ -19,7 +19,7 @@ function Searchgiffs() {
             var still = results[i].images.fixed_height_still.url;
 
             var animalImage = $("<img>");
-            animalImage.attr("src", still);
+            animalImage.attr("src", animated);
             animalImage.attr("data-still", still);
             animalImage.attr("data-animate", animated);
             animalImage.attr("data-state", "still");
