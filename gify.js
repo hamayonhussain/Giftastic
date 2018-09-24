@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function Searchgiffs() {
-        var Searchbar = document.getElementById("Searchbar").value;
+        var searchbar = $("#Searchbar").val().trim();
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + Searchbar + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
 
         $.ajax({
