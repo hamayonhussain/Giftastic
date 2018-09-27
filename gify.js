@@ -1,7 +1,34 @@
 $(document).ready(function () {
+    var preRenderedGiffs = ["batman", "titanic", "tom hanks", "snakes"];
+    renderButtons();
+    function renderButtons() {
+
+        // Deleting the movies prior to adding new movies
+        // (this is necessary otherwise you will have repeat buttons)
+        $("#buttons-view").empty();
+
+        // Looping through the array of movies
+        for (var i = 0; i < preRenderedGiffs.length; i++) {
+
+          // Then dynamicaly generating buttons for each movie in the array
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<button>");
+          // Adding a class of movie-btn to our button
+          a.addClass("search-button");
+          // Adding a data-attribute
+          a.attr("data-name", preRenderedGiffs[i]);
+          // Providing the initial button text
+          a.text(preRenderedGiffs[i]);
+          // Adding the button to the buttons-view div
+          $("#buttons-view").append(a);
+        }
+    }
+
     function Searchgiffs() {
-        var searchbar = $("#Searchbar").val().trim();
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + Searchbar + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
+        console.log(Searchgiffs);
+        var searchbar = $("#searchbar").val().trim();
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchbar + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
+        console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -23,7 +50,7 @@ $(document).ready(function () {
                 var still = results[i].images.fixed_height_still.url;
 
                 var giphyImage = $("<img>")
-                giphyImage.attr("src", animated);
+                giphyImage.attr("src", still);
 
 
                 giphyImage.attr("data-still", still);
@@ -41,12 +68,13 @@ $(document).ready(function () {
             }
         });
 
-
+      renderButtons();
 
 
     }
 
-    $("animal-image").on("click", function () {
+    $(document).on("click", ".animal-image", function () {
+        console.log("state");
         var state = $(this).attr("data-state");
 
         if (state === "still") {
@@ -58,7 +86,8 @@ $(document).ready(function () {
         }
     });
 
-    $('.btn').click(function () {
+    $('.search-button').on('click', function () {
+        console.log('search button clicked');
         Searchgiffs();
     });
 
