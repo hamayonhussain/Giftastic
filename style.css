@@ -1,10 +1,27 @@
 body {
-    background-color: darkgray;
+    background-color: darkolivegreen;
+    
+    
+    
 }
 
 .jumbotron {
     text-align: center;
     background-color: goldenrod;
-    color: orangered;
+    color: black;
+    border-radius: 10px;    
+}
+/* This is the H1 text in the Jumbotron */
+.display-4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+}
+
+.lead   {
+    font-family: 'Times New Roman', Times, serif;
     
+}
+
+#Searchbar {
+    font-family: 'Times New Roman', Times, serif
 }
