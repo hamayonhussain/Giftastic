@@ -10,6 +10,9 @@ body {
     background-color: goldenrod;
     color: black;
     border-radius: 10px;    
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 25px;
 }
 /* This is the H1 text in the Jumbotron */
 .display-4 {

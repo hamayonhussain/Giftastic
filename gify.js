@@ -22,8 +22,8 @@ $(document).ready(function () {
                 var animated = results[i].images.fixed_height.url;
                 var still = results[i].images.fixed_height_still.url;
 
-                var giphyImage = $("<img>");
-                giphyImage.attr("src", state);
+                var giphyImage = $("<img>")
+                giphyImage.attr("src", animated);
 
 
                 giphyImage.attr("data-still", still);
