@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     function Searchgiffs() {
         console.log(Searchgiffs);
-        var searchbar = $("#searchbar").val().trim();
+        var searchbar = $(this).attr("data-name");
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchbar + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
         console.log(queryURL);
 
