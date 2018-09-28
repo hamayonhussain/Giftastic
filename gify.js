@@ -28,7 +28,7 @@ $(document).ready(function () {
         console.log(Searchgiffs);
         console.log(this);
         var arrayButton = $(clickedButton).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + arrayButton + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + arrayButton + "&api_key=E0rUWkyrlNoHl5oyzGQoWq4ksFpAj0pY&limit=10";
         console.log(queryURL);
 
         $.ajax({
@@ -95,3 +95,8 @@ $(document).ready(function () {
 
 
 });
+
+
+// 1. look up the refrigetor Gamepad. 
+//  look up how to assign the onclick function to all the letters
+//  change the searchgiphy button to create create button and create a new button
